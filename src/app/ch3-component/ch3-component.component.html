@@ -25,4 +25,25 @@
     @Attribute 裝飾器接收父元件資料：須從外部設定，且通常不會改變的數值
 </div>
 <br>
-<!-- <div [(size)]=""></div> -->
+
+<p>Before ng-template</p>
+<div *ngTemplateOutlet="sample"></div>
+<p>After ng-template</p>
+
+<ng-template #sample>
+    <p>3.4.1 封裝頁面範本 with ng-template</p>
+</ng-template>
+<br>
+<div *ngTemplateOutlet="sample2; context:{desc:'第一項', desc2:'第一點'}"></div>
+<div *ngTemplateOutlet="sample2; context:{desc:'第二項', desc2:'第二點'}"></div>
+
+<ng-template #sample2 let-desc="desc" let-desc2="desc2">
+    <p>3.4.1 封裝頁面範本 with ng-template: 設定串入資料 let-XXX="XXX" - {{desc}} - {{desc2}}</p>
+</ng-template>
+<br>
+<div *ngTemplateOutlet="sample3; context: { $implicit: 'first div' }"></div>
+<div *ngTemplateOutlet="sample3; context: { $implicit: 'second div' }"></div>
+
+<ng-template #sample3 let-desc let-desc2>
+    <p>3.4.1 封裝頁面範本 with ng-template: 設定串入資料 利用context內指定的 $implicit 傳入預設資料 - {{desc}} - {{desc2}} </p>
+</ng-template>
