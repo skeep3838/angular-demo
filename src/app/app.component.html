@@ -17,10 +17,16 @@
 <div class="content" role="main">
   <div>
     <app-ch3-component [(size)]="fontsizeFather" sizePriv="8" color="red" (sizeChange)="onSizeChange($event)">
+      <!-- <div>AppComponent 指定內容</div> -->
+      <h3>這是表單標題</h3>
+      <div class="sub-titile">表單副標題</div>
+      表單內容
+      <div form-button>
+        <button>儲存</button>
+      </div>
     </app-ch3-component>
     <p [style.fontSize.pt]="fontsizeFather">目前文字尺寸：{{ fontsizeFather }} pt</p>
   </div>
-
   <!-- Links -->
   <div class="card-container">
     <a class="circle-link" title="Animations" href="https://angular.io/guide/animations" target="_blank" rel="noopener">
