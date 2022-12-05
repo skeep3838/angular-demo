@@ -1,0 +1,28 @@
+<p>ch3-component works!</p>
+
+<div>文字插值</div>
+<div>{{name}}</div>
+<br>
+<div>產品單價：{{purchaseCount}}</div>
+<div>訂購數量：{{unitPrice}}</div>
+<div>金額小計：{{purchaseCount * unitPrice}}</div>
+<br>
+<div>事件繫結</div>
+<div>屬性繫結</div>
+<div>樣式繫結</div>
+<button type="button" (click)="onSetFontSize(1)" [disabled]="fontsize===16">增加 1 pt</button>
+<button type="button" (click)="onSetFontSize(-1)" [disabled]="fontsize===10">減少 1 pt</button>
+<p [style]="{fontSize:fontsize+'pt', color:fontColor}">目前的文字尺寸：{{fontsize}} pt</p><br>
+<br>
+<div>類別繫結</div>
+<p [class]="fontClass">目前文字樣式：{{fontClass}}</p>
+<br>
+<div>利用@input 接收父元件資料</div>
+<div>Ch3_Component 記錄的尺寸值：{{ size }}</div>
+<div [style.fontSize.pt]="sizePriv">Ch3_Component sizePriv 記錄的尺寸值：{{ sizePriv }}</div>
+<br>
+<div [style.color]="color">
+    @Attribute 裝飾器接收父元件資料：須從外部設定，且通常不會改變的數值
+</div>
+<br>
+<!-- <div [(size)]=""></div> -->
