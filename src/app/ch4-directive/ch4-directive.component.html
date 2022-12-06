@@ -1,3 +1,11 @@
+<!-- ######## 4.2.4 動態元件載入 ######## -->
+<div>
+    <button type="button" (click)="onSwitch('a')">載入 A 元件</button>
+    <button type="button" (click)="onSwitch('b')">載入 B 元件</button>
+    <button type="button" (click)="onSwitch('c')">載入 C 元件</button>
+  </div>
+<div *ngComponentOutlet="component"></div>
+
 <!-- ######## 4.2.1 清單列表 *ngFor ######## -->
 <!-- <span>{{ task.TaskName }}</span> -->
 
@@ -7,7 +15,7 @@
   <div>{{ task.TaskName }}</div>
 </div>  -->
 
-<!-- ######## 4.2.1 條件判斷 *ngIf ######## -->
+<!-- ######## 4.2.2 條件判斷 *ngIf ######## -->
 <div *ngIf="tasks.length === 0; then empty; else list"></div>
 
 <ng-template #empty>
@@ -24,3 +32,4 @@
         </div>
     </div>
 </ng-template>
+

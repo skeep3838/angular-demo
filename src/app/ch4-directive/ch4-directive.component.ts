@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Type } from '@angular/core';
 import {Task} from '../module/task'
+import { AComponent } from './a/a.component';
+import { BComponent } from './b/b.component';
+import { CComponent } from './c/c.component';
 
 @Component({
   selector: 'app-ch4-directive',
@@ -34,5 +37,20 @@ export class Ch4DirectiveComponent implements OnInit {
       new Task({ TaskSn: '004', TaskName: '待辦事項 D', State: 'None' }),
       new Task({ TaskSn: '005', TaskName: '待辦事項 E', State: 'None' }),
     ];
+  }
+
+  component!: Type<any>;
+  onSwitch(type: string) {
+    switch (type) {
+      case 'a':
+        this.component = AComponent;
+        break;
+      case 'b':
+        this.component = BComponent;
+        break;
+      case 'c':
+        this.component = CComponent;
+        break;
+    }
   }
 }
