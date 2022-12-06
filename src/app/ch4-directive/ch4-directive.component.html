@@ -1,0 +1,6 @@
+<!-- <span>{{ task.TaskName }}</span> -->
+<button type="button" (click)="onReset()">重設工作事項</button> 
+
+<div *ngFor="let task of tasks; let odd = odd" [class.odd]="odd">
+  <div>{{ task.TaskName }}</div>
+</div>

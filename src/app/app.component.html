@@ -16,6 +16,11 @@
 
 <div class="content" role="main">
   <div>
+    <app-ch4-directive></app-ch4-directive>
+    <!-- <button type="button" (click)="onReset()">重設工作事項</button> -->
+    <!-- <app-ch4-directive *ngFor="let task of tasks; let i = index" [class.odd]="i%2===1" [task]="task"></app-ch4-directive> -->
+    <!-- <app-ch4-directive *ngFor="let task of tasks; let odd=odd" [class.odd]="odd" [task]="task"></app-ch4-directive> -->
+    
     <app-ch3-component [(size)]="fontsizeFather" sizePriv="8" color="red" (sizeChange)="onSizeChange($event)">
       <!-- <div>AppComponent 指定內容</div> -->
       <h3 #title>這是表單標題</h3>

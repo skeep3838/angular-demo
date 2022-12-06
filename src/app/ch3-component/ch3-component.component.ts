@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Attribute, Output, EventEmitter, OnChanges, S
   styleUrls: ['./ch3-component.component.css']
 })
 
-// 3.6 元件樣式先跳過
+// 3.6 元件樣式先跳過 - 封裝模式設定，特殊選擇器
 export class Ch3ComponentComponent implements OnInit, OnChanges {
 
   constructor(@Attribute('color') public color: string) { }

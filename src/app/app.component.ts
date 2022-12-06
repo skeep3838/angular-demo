@@ -1,6 +1,8 @@
+import { Task } from './module/task';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Ch3ComponentComponent } from './ch3-component/ch3-component.component';
+
 
 @Component({
   selector: 'app-root',
@@ -37,4 +39,24 @@ export class AppComponent {
     console.log(this.ch3ComponentComponent);
     console.log(this.divElement);
   }
+
+  // tasks: Task[] = [
+  //   new Task({ TaskSn: '001', TaskName: '待辦事項 A', State: 'Finish' }),
+  //   new Task({ TaskSn: '002', TaskName: '待辦事項 B', State: 'Doing' }),
+  //   new Task({ TaskSn: '003', TaskName: '待辦事項 C', State: 'None' }),
+  //   new Task({ TaskSn: '004', TaskName: '待辦事項 D', State: 'None' }),
+  // ];
+
+  // trackByItems(index: number, task: Task): string {
+  //   return task.TaskSn;
+  // }
+
+  // onReset(): void {
+  //   this.tasks = [
+  //     new Task({ TaskSn: '001', TaskName: '待辦事項 A', State: 'Finish' }),
+  //     new Task({ TaskSn: '002', TaskName: '待辦事項 B', State: 'Doing' }),
+  //     new Task({ TaskSn: '004', TaskName: '待辦事項 D', State: 'None' }),
+  //     new Task({ TaskSn: '005', TaskName: '待辦事項 E', State: 'None' }),
+  //   ];
+  // }
 }
