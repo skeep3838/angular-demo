@@ -1,6 +1,20 @@
+<!-- ######## 4.2.1 清單列表 *ngFor ######## -->
 <!-- <span>{{ task.TaskName }}</span> -->
-<button type="button" (click)="onReset()">重設工作事項</button> 
 
-<div *ngFor="let task of tasks; let odd = odd" [class.odd]="odd">
+<!-- <button type="button" (click)="onReset()">重設工作事項</button> -->
+
+<!-- <div *ngFor="let task of tasks; let odd = odd" [class.odd]="odd">
   <div>{{ task.TaskName }}</div>
-</div>
+</div>  -->
+
+<!-- ######## 4.2.1 條件判斷 *ngIf ######## -->
+<div *ngIf="tasks.length === 0; then empty; else list"></div>
+
+<ng-template #empty>
+    <div class="data-empty">無待辦事項</div>
+</ng-template>
+<ng-template #list>
+    <div *ngFor="let task of tasks; let odd=odd" [class.odd]="odd">
+        <div>{{ task.TaskName }}</div>
+    </div>
+</ng-template>

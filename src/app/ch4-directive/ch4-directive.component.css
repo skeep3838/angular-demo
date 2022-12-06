@@ -1,4 +1,4 @@
-:host {
+/* :host {
     display: flex;
     justify-content: space-between;
     margin: 10px 20px;
@@ -6,7 +6,7 @@
     padding-right: 10px;
     border: solid 1px #aaa;
     line-height: 32pt;
-  }
+  } */
   
   :host(.odd) {
     background-color: #777;
