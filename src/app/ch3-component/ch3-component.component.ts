@@ -5,6 +5,8 @@ import { Component, OnInit, Input, Attribute, Output, EventEmitter, OnChanges, S
   templateUrl: './ch3-component.component.html',
   styleUrls: ['./ch3-component.component.css']
 })
+
+// 3.6 元件樣式先跳過
 export class Ch3ComponentComponent implements OnInit, OnChanges {
 
   constructor(@Attribute('color') public color: string) { }
