@@ -18,7 +18,7 @@
   <div>
     <app-ch3-component [(size)]="fontsizeFather" sizePriv="8" color="red" (sizeChange)="onSizeChange($event)">
       <!-- <div>AppComponent 指定內容</div> -->
-      <h3>這是表單標題</h3>
+      <h3 #title>這是表單標題</h3>
       <div class="sub-titile">表單副標題</div>
       表單內容
       <div form-button>
@@ -26,6 +26,7 @@
       </div>
     </app-ch3-component>
     <p [style.fontSize.pt]="fontsizeFather">目前文字尺寸：{{ fontsizeFather }} pt</p>
+    <br>
   </div>
   <!-- Links -->
   <div class="card-container">
