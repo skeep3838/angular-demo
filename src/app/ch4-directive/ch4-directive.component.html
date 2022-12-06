@@ -15,6 +15,12 @@
 </ng-template>
 <ng-template #list>
     <div *ngFor="let task of tasks; let odd=odd" [class.odd]="odd">
-        <div>{{ task.TaskName }}</div>
+        <span>{{ task.TaskName }}</span>
+        <!-- ######## 4.2.3 多個條件判斷 *ngSwitch ######## -->
+        <div [ngSwitch]="task.State">
+            <span *ngSwitchCase="'Doing'">進行中</span>
+            <span *ngSwitchCase="'Finish'">已完成</span>
+            <span *ngSwitchDefault>未安排</span>
+        </div>
     </div>
 </ng-template>
