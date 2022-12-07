@@ -57,4 +57,8 @@ export class Ch4DirectiveComponent implements OnInit {
         break;
     }
   }
+
+  onConfirm(): void {
+    // alert('已確認');
+  }
 }

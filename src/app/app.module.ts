@@ -9,6 +9,7 @@ import { AComponent } from './ch4-directive/a/a.component';
 import { BComponent } from './ch4-directive/b/b.component';
 import { CComponent } from './ch4-directive/c/c.component';
 import { CustomButtonDirective } from './ch4-directive/custom-button.directive';
+import { ButtonConfirmDirective } from './ch4-directive/button-confirm.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CustomButtonDirective } from './ch4-directive/custom-button.directive';
     AComponent,
     BComponent,
     CComponent,
-    CustomButtonDirective
+    CustomButtonDirective,
+    ButtonConfirmDirective
   ],
   imports: [
     BrowserModule,
