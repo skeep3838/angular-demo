@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Type } from '@angular/core';
+import { Component, OnInit, Input, Type, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import {Task} from '../module/task'
 import { AComponent } from './a/a.component';
 import { BComponent } from './b/b.component';
@@ -14,7 +14,11 @@ export class Ch4DirectiveComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.button.changeColor('red');
   }
+
+  // 取得指令實體 #button ，自訂按鈕指定宿主
+  @ViewChild('button', {static:true}) button !: any;
 
   // 取得父元件資料
   // @Input() task!: Task;

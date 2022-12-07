@@ -8,6 +8,7 @@ import { Ch4DirectiveComponent } from './ch4-directive/ch4-directive.component';
 import { AComponent } from './ch4-directive/a/a.component';
 import { BComponent } from './ch4-directive/b/b.component';
 import { CComponent } from './ch4-directive/c/c.component';
+import { CustomButtonDirective } from './ch4-directive/custom-button.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CComponent } from './ch4-directive/c/c.component';
     Ch4DirectiveComponent,
     AComponent,
     BComponent,
-    CComponent
+    CComponent,
+    CustomButtonDirective
   ],
   imports: [
     BrowserModule,

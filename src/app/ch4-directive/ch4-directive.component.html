@@ -1,7 +1,7 @@
 <!-- ######## 4.2.4 動態元件載入 ######## -->
 <div>
     <button type="button" (click)="onSwitch('a')">載入 A 元件</button>
-    <button type="button" (click)="onSwitch('b')">載入 B 元件</button>
+    <button appCustomButton #button="bButton" type="button" (click)="onSwitch('b')">載入 B 元件</button>
     <button type="button" (click)="onSwitch('c')">載入 C 元件</button>
   </div>
 <div *ngComponentOutlet="component"></div>

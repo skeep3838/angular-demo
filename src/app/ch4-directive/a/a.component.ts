@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: 'app-a',
+  selector: 'button[app-a]',
   templateUrl: './a.component.html',
   styleUrls: ['./a.component.css']
 })
@@ -9,7 +9,5 @@ export class AComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }
