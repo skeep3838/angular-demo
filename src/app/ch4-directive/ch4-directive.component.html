@@ -1,3 +1,6 @@
+<!-- ######## 4.4.1 @HostListener 裝飾器-事件監聽 ######## -->
+<p appOverHighlight>當游標移到這裡，會改變文字顏色</p>
+
 <!-- ######## 4.3.3 自訂結構型指令 ######## -->
 <ng-container [appLimit]="userLimit">
     <span>目前的權限：{{ userLimit }}</span>
@@ -7,7 +10,7 @@
   </ng-container>
 <!-- ######## 4.2.4 動態元件載入 ######## -->
 <div>
-    <button appButtonConfirm="是否確認？" (confirm)="onConfirm()" type="button" (click)="onSwitch('a')">載入 A 元件</button>
+    <button appButtonConfirm="是否確認？" (confirm)="onConfirm()" type="button" >載入 A 元件</button>
     <button appCustomButton #button="bButton" type="button" (click)="onSwitch('b')">載入 B 元件</button>
     <button type="button" (click)="onSwitch('c')">載入 C 元件</button>
   </div>
