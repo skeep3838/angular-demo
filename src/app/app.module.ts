@@ -10,6 +10,8 @@ import { BComponent } from './ch4-directive/b/b.component';
 import { CComponent } from './ch4-directive/c/c.component';
 import { CustomButtonDirective } from './ch4-directive/custom-button.directive';
 import { ButtonConfirmDirective } from './ch4-directive/button-confirm.directive';
+import { LimitDirective } from './ch4-directive/limit.directive';
+import { LimitCaseDirective } from './ch4-directive/limit-case.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ButtonConfirmDirective } from './ch4-directive/button-confirm.directive
     BComponent,
     CComponent,
     CustomButtonDirective,
-    ButtonConfirmDirective
+    ButtonConfirmDirective,
+    LimitDirective,
+    LimitCaseDirective
   ],
   imports: [
     BrowserModule,

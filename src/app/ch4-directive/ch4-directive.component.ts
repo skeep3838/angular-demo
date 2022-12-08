@@ -59,6 +59,9 @@ export class Ch4DirectiveComponent implements OnInit {
   }
 
   onConfirm(): void {
-    // alert('已確認');
+    alert('已確認');
   }
+
+  userLimit = 'admin';
+  // userLimit = 'user';
 }

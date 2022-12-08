@@ -1,3 +1,10 @@
+<!-- ######## 4.3.3 自訂結構型指令 ######## -->
+<ng-container [appLimit]="userLimit">
+    <span>目前的權限：{{ userLimit }}</span>
+    <div class="item" *appLimitCase="'user'">這個區塊只有使用者看得到</div>
+    <div class="item" *appLimitCase="'admin'">這個區塊只有管理員看得到</div>
+    <div class="item">這個區塊全部使用者都看得到</div>
+  </ng-container>
 <!-- ######## 4.2.4 動態元件載入 ######## -->
 <div>
     <button appButtonConfirm="是否確認？" (confirm)="onConfirm()" type="button" (click)="onSwitch('a')">載入 A 元件</button>
