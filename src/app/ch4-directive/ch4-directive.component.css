@@ -13,3 +13,10 @@
     color: white;
   }
   
+  p {
+    font-family: Lato;
+  }
+  
+  p.overing {
+    color: green;
+  }
