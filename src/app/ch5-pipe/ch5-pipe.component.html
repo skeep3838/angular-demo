@@ -1,0 +1,73 @@
+<h3>5.2.2 利用管道將陣列資料倒序排列</h3>
+<div *ngFor="let task of tasks | orderBy: 'State'">
+    <span>{{ task.TaskName }}</span>
+        <!-- ######## 4.2.3 多個條件判斷 *ngSwitch ######## -->
+        <div [ngSwitch]="task.State">
+            <span *ngSwitchCase="'Doing'">進行中</span>
+            <span *ngSwitchCase="'Finish'">已完成</span>
+            <span *ngSwitchDefault>未安排</span>
+        </div>
+</div>
+
+<h3>5.1.8 日期資料顯示 - DatePipe</h3>
+<div>
+    UTC時間: {{ now | date: "short":"+0000" }}
+</div>
+<div>
+    UTC時間: {{ now | date: "YYYY/MM/dd HH:mm:ss" }}
+</div>
+
+<h3>5.1.7 貨幣資料顯示 - CurrencyPipe</h3>
+<div>金額: {{2500 | currency}}</div>
+<div>
+    CAD 貨幣碼: {{2500 | currency:"CAD"}}
+</div>
+<div>
+    貨幣指示格式: {{2500 | currency:"EUR":"symbol"}}
+</div>
+<div>
+    貨幣指示格式(narrow): {{2500 | currency:"EUR":"symbol-narrow"}}
+</div>
+
+<h3>5.1.6 百分比資料顯示 - PercentPipe</h3>
+<div>百分率: {{0.25 | percent:"2.2-4"}}</div>
+
+<h3>5.1.5 數值資料的顯示 - DeciamalPipe</h3>
+<h3>整數位數.小數最小位-小數最大位</h3>
+<div>測試數值顯示：{{3.14159 | number}}</div>
+<div>指定整數與小數長度：{{3.14159 | number:'4.1-5'}}</div>
+
+<h3>5.1.4 物件轉化成陣列 - keyValuePipe</h3>
+<table border="1">
+    <tr>
+        <th>欄位</th>
+        <th>內容</th>
+    </tr>
+    <tr *ngFor="let t of task | keyvalue">
+        <td>{{ columnDesc[t.key] }}</td>
+        <td>{{ t.value }}</td>
+    </tr>
+</table>
+
+<h3>5.1.3 限制顯示長度 SlicePipe (JavaScript-Array.prototype.slice())</h3>
+<div>
+    {{'01234567890' | slice:0:6 }}
+</div>
+
+<div *ngFor="let task of tasks | slice:0:2">
+    <span>{{ task.TaskName }}</span>
+    <!-- ######## 4.2.3 多個條件判斷 *ngSwitch ######## -->
+    <div [ngSwitch]="task.State">
+        <span *ngSwitchCase="'Doing'">進行中</span>
+        <span *ngSwitchCase="'Finish'">已完成</span>
+        <span *ngSwitchDefault>未安排</span>
+    </div>
+</div>
+
+<h3>5.1.2 改變字母大小寫</h3>
+<div>Upper Case: {{'angular' | uppercase}}</div>
+<div>Lower Case: {{'angular' | lowercase}}</div>
+<div>Title Case: {{'angular' | titlecase}}</div>
+
+<h3>5.1.1 顯示物件的 Ｊson 格式</h3>
+<pre>{{tasks | json}}</pre>

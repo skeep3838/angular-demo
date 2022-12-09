@@ -1,0 +1,19 @@
+p {
+    font-family: Lato;
+  }
+  
+  table {
+    border-width: 2px;
+    border-collapse: collapse;
+  }
+  
+  tr > td:first-child {
+    text-align: center;
+  }
+  
+  th,
+  td {
+    width: 150px;
+    padding: 10px;
+  }
+  

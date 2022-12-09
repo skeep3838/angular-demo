@@ -13,6 +13,8 @@ import { ButtonConfirmDirective } from './ch4-directive/button-confirm.directive
 import { LimitDirective } from './ch4-directive/limit.directive';
 import { LimitCaseDirective } from './ch4-directive/limit-case.directive';
 import { OverHighlightDirective } from './ch4-directive/over-highlight.directive';
+import { Ch5PipeComponent } from './ch5-pipe/ch5-pipe.component';
+import { OrderByPipe } from './ch5-pipe/order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { OverHighlightDirective } from './ch4-directive/over-highlight.directive
     ButtonConfirmDirective,
     LimitDirective,
     LimitCaseDirective,
-    OverHighlightDirective
+    OverHighlightDirective,
+    Ch5PipeComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
