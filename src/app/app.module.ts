@@ -15,6 +15,8 @@ import { LimitCaseDirective } from './ch4-directive/limit-case.directive';
 import { OverHighlightDirective } from './ch4-directive/over-highlight.directive';
 import { Ch5PipeComponent } from './ch5-pipe/ch5-pipe.component';
 import { OrderByPipe } from './ch5-pipe/order-by.pipe';
+import { Ch6ServiceComponent } from './ch6-service/ch6-service.component';
+import { OtherComponent } from './other/other.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { OrderByPipe } from './ch5-pipe/order-by.pipe';
     LimitCaseDirective,
     OverHighlightDirective,
     Ch5PipeComponent,
-    OrderByPipe
+    OrderByPipe,
+    Ch6ServiceComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,

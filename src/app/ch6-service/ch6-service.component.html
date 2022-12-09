@@ -1,0 +1,7 @@
+<button type="button" [disabled]="fontSizeService.size === 16" (click)="onSetFontSize(1)">
+    增加 1 pt
+</button>
+<button type="button" [disabled]="fontSizeService.size === 10" (click)="onSetFontSize(-1)">
+    減少 1 pt
+</button>
+<p [style.fontSize.pt]="fontSizeService.size">目前文字尺寸：{{ fontSizeService.size }} pt</p>

@@ -1,7 +1,8 @@
 import { Task } from './module/task';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Ch3ComponentComponent } from './ch3-component/ch3-component.component';
+import { FontSizeService } from './service/font-size.service';
 
 
 @Component({
@@ -9,7 +10,13 @@ import { Ch3ComponentComponent } from './ch3-component/ch3-component.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  constructor(public fontSizeService: FontSizeService){}
+  
+  ngOnInit(): void {
+    this.fontSizeService.size=10
+  }
   // 文字插值
   title = 'angular-demo';
   // 父元件
