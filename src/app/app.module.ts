@@ -1,3 +1,5 @@
+import { OrderDiscontService } from './service/order-discont.service';
+import { OrderService } from './service/order.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -40,7 +42,9 @@ import { OtherComponent } from './other/other.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  // 6.2.1 利用 useClass 抽象服務
+  // 利用 useClass 直接抽換原本的訂單服務
+  providers: [{provide: OrderService, useClass: OrderDiscontService}],
   bootstrap: [AppComponent],
   exports: []
 })
