@@ -44,7 +44,15 @@ import { OtherComponent } from './other/other.component';
   ],
   // 6.2.1 利用 useClass 抽象服務
   // 利用 useClass 直接抽換原本的訂單服務
-  providers: [{provide: OrderService, useClass: OrderDiscontService}],
+  // providers: [{provide: OrderService, useClass: OrderDiscontService}],
+
+  // 6.2.2 利用 useExisting 抽象服務
+  // 利用useExisting 不會建立新的實體，會去使用已經存在的實體，若是不存在任何實體則會拋出例外
+  // providers: [{provide: OrderService, useExisting: OrderDiscontService}, OrderDiscontService],
+  
+  // 6.2.3 利用 useValue 抽象服務
+  // useValue 常用於寫單元測試
+  providers: [{provide: OrderService, useValue: {computeTotal: () => 100}}],
   bootstrap: [AppComponent],
   exports: []
 })
