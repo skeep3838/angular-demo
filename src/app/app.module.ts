@@ -22,6 +22,7 @@ import { Ch6ServiceComponent } from './ch6-service/ch6-service.component';
 import { OtherComponent } from './other/other.component';
 import { TaskComponent } from './task/task.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     OrderByPipe,
     Ch6ServiceComponent,
     OtherComponent,
-    TaskComponent
+    TaskComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
