@@ -20,6 +20,8 @@ import { Ch5PipeComponent } from './ch5-pipe/ch5-pipe.component';
 import { OrderByPipe } from './ch5-pipe/order-by.pipe';
 import { Ch6ServiceComponent } from './ch6-service/ch6-service.component';
 import { OtherComponent } from './other/other.component';
+import { TaskComponent } from './task/task.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,13 @@ import { OtherComponent } from './other/other.component';
     Ch5PipeComponent,
     OrderByPipe,
     Ch6ServiceComponent,
-    OtherComponent
+    OtherComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   // 6.2.1 利用 useClass 抽象服務
   // 利用 useClass 直接抽換原本的訂單服務
