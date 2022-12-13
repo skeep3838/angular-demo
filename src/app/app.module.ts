@@ -1,3 +1,4 @@
+import { OrderAnniversaryServiceService } from './service/order-anniversary-service.service';
 import { OrderDiscontService } from './service/order-discont.service';
 import { OrderService } from './service/order.service';
 import { NgModule } from '@angular/core';
@@ -49,10 +50,20 @@ import { OtherComponent } from './other/other.component';
   // 6.2.2 利用 useExisting 抽象服務
   // 利用useExisting 不會建立新的實體，會去使用已經存在的實體，若是不存在任何實體則會拋出例外
   // providers: [{provide: OrderService, useExisting: OrderDiscontService}, OrderDiscontService],
-  
+
   // 6.2.3 利用 useValue 抽象服務
   // useValue 常用於寫單元測試
-  providers: [{provide: OrderService, useValue: {computeTotal: () => 100}}],
+  // providers: [{provide: OrderService, useValue: {computeTotal: () => 100}}],
+
+  // 6.2.4 利用 useFactory 抽象服務
+  providers:
+    [{
+      provide: OrderService,
+      useFactory: () => {
+        return (new Date()).getMonth() === 11
+          ? new OrderAnniversaryServiceService() : new OrderService();
+      }
+    }],
   bootstrap: [AppComponent],
   exports: []
 })

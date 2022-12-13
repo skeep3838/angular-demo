@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class OrderService {
 
+  message = '一般價格';
   details: OrderDetail[] = [];
   computeTotal(): number {
     console.log("OrderService"+this.details.map((d)=>d.PurchaseCount * d.UnitPrice)

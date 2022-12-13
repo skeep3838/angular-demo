@@ -3,6 +3,7 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Ch3ComponentComponent } from './ch3-component/ch3-component.component';
 import { FontSizeService } from './service/font-size.service';
+import { OrderService } from './service/order.service';
 
 
 @Component({
@@ -12,7 +13,10 @@ import { FontSizeService } from './service/font-size.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(public fontSizeService: FontSizeService){}
+  constructor(
+    public fontSizeService: FontSizeService,
+    public orderService: OrderService
+    ){}
   
   ngOnInit(): void {
     this.fontSizeService.size=10

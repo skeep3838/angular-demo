@@ -1,12 +1,14 @@
-import { OrderDetail } from './../module/order-detail';
 import { Injectable } from '@angular/core';
+import { OrderDetail } from '../module/order-detail';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrderDiscontService {
+export class OrderAnniversaryServiceService {
 
-  message = '九折價格';
+  constructor() { }
+
+  message = '八折價格';
   details: OrderDetail[] = [];
   computeTotal(): number {
     // Array.reduce(callback[accumulator, currentValue, currentIndex, array], initialValue)
@@ -16,7 +18,7 @@ export class OrderDiscontService {
     // array：呼叫該 Array method 的陣列
     // initialValue：預設值，放在 function 的最後方，非必填
     // https://w3c.hexschool.com/blog/a2cb755f
-    const total = this.details.map((d) => d.PurchaseCount * d.UnitPrice) 
+    const total = this.details.map((d) => d.PurchaseCount * d.UnitPrice * 0.8) 
                               .reduce((acc, curr) => acc + curr, 0);
     return total * 0.9;
   }

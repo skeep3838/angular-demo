@@ -6,7 +6,13 @@ import { OrderService } from '../service/order.service';
 @Component({
   selector: 'app-ch6-service',
   templateUrl: './ch6-service.component.html',
-  styleUrls: ['./ch6-service.component.css']
+  styleUrls: ['./ch6-service.component.css'],
+  providers: [
+    {
+      provide: OrderService,
+      useValue: { message: '這是已經被替換掉的訊息' },
+    },
+  ],
 })
 export class Ch6ServiceComponent implements OnInit {
 
