@@ -1,52 +1,66 @@
-<div class="content" role="main">
-  <div>
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">首頁</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="ch3" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ch3</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="ch4" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ch4</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="ch5" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ch5</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="ch6" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ch6</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="task" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">task</a>
-      </li>
-    </ul>
-    <hr />
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-1">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <!-- 加上 mr-auto,表示 margin-right:auto; 負責將剩下多出來的margin指定到左側選單組的右邊 ********** -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="ch3" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Ch3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="ch4" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Ch4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="ch5" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Ch5</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="ch6" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Ch6</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="task" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">task</a>
+        </li>
+      </ul>
 
-    <!-- <app-task></app-task> -->
+      <form class="d-flex navbar-end">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-    <!-- ######## 6 服務 Service ######## -->
+<!-- <app-task></app-task> -->
 
-    <!-- <h3>AppComponent</h3>
+<!-- ######## 6 服務 Service ######## -->
+
+<!-- <h3>AppComponent</h3>
     <span>{{ orderService.message }}</span>
     <hr>
     <app-ch6-service></app-ch6-service>
     <app-other></app-other> -->
 
-    <!-- ######## 5 檢視資料的面具 - 管道 Pipe ######## -->
-    <!-- <app-ch5-pipe></app-ch5-pipe> -->
+<!-- ######## 5 檢視資料的面具 - 管道 Pipe ######## -->
+<!-- <app-ch5-pipe></app-ch5-pipe> -->
 
-    <!-- ######## 4 指令 Directive ######## -->
-    <!-- <app-ch4-directive></app-ch4-directive> -->
+<!-- ######## 4 指令 Directive ######## -->
+<!-- <app-ch4-directive></app-ch4-directive> -->
 
-    <!-- <button type="button" (click)="onReset()">重設工作事項</button>
+<!-- <button type="button" (click)="onReset()">重設工作事項</button>
     <div *ngIf="tasks.length >= 1; else empty"></div>
     <app-ch4-directive *ngFor="let task of tasks; let i = index" [class.odd]="i%2===1" [task]="task">
     </app-ch4-directive> -->
 
-    <!-- <div *ngIf="tasks.length === 0; then empty; else list"></div> -->
-  </div>
+<!-- <div *ngIf="tasks.length === 0; then empty; else list"></div> -->
 
-  <!-- <ng-template #empty>
+<!-- <ng-template #empty>
     <div class="data-empty">無待辦事項</div>
   </ng-template>
   <ng-template #list>
@@ -54,11 +68,11 @@
   </ng-template> -->
 
 
-  <!-- ######## 3 元件 Component ######## -->
-  <!-- <app-ch3-component [(size)]="fontsizeFather" sizePriv="8" color="red" (sizeChange)="onSizeChange($event)"> -->
-  <!-- <div>AppComponent 指定內容</div> -->
+<!-- ######## 3 元件 Component ######## -->
+<!-- <app-ch3-component [(size)]="fontsizeFather" sizePriv="8" color="red" (sizeChange)="onSizeChange($event)"> -->
+<!-- <div>AppComponent 指定內容</div> -->
 
-  <!-- <h3 #title>這是表單標題</h3>
+<!-- <h3 #title>這是表單標題</h3>
     <div class="sub-titile">表單副標題</div>
     表單內容
     <div form-button>
@@ -67,5 +81,6 @@
   </app-ch3-component>
   <p [style.fontSize.pt]="fontsizeFather">目前文字尺寸：{{ fontsizeFather }} pt</p>
   <br> -->
+<div class="container text-center mx-auto">
+    <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
