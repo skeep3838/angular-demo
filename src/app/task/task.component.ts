@@ -4,6 +4,7 @@ import { TaskService } from './../service/task.service';
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../module/task';
 import { HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-task',
@@ -12,31 +13,17 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class TaskComponent implements OnInit {
 
-  tasks: Task[] = [];
   posts: PostModule[] = [];
+  post$!: Observable<PostModule[]>;
 
   constructor(
-    private taskService: TaskService,
     private postService: PostService
   ) { }
 
   ngOnInit(): void {
-    this.getTasks();
-    this.getPosts();
-
-  }
-
-  getTasks() {
-    this.taskService.getTasks().subscribe((res: any) => {
-      this.tasks = res;
-      console.log(`getTasks result: ${res}`);
-    });
-  }
-
-  createTask() {
-    this.taskService.createTask().subscribe((newTask) => {
-      this.tasks.push(newTask);
-    });
+    // this.getPosts();
+    // 可監控變數，通常以$符號做結尾
+    this.post$ = this.postService.getPosts();
   }
 
   getPosts() {
