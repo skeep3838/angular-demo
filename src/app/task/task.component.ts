@@ -3,6 +3,7 @@ import { PostService } from './../service/post.service';
 import { TaskService } from './../service/task.service';
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../module/task';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-task',
@@ -16,8 +17,8 @@ export class TaskComponent implements OnInit {
 
   constructor(
     private taskService: TaskService,
-    private postService : PostService
-    ) { }
+    private postService: PostService
+  ) { }
 
   ngOnInit(): void {
     this.getTasks();
@@ -32,20 +33,27 @@ export class TaskComponent implements OnInit {
     });
   }
 
-  createTask(){
+  createTask() {
     this.taskService.createTask().subscribe((newTask) => {
       this.tasks.push(newTask);
     });
   }
 
-  getPosts(){
+  getPosts() {
     this.postService.getPosts().subscribe((res) => {
       this.posts = res;
       console.log(`getPost result: ${res}`);
     });
   }
 
-  createPost(){
+  getPostsRes() {
+    this.postService.getPostsRes().subscribe((res: HttpResponse<any>) => {
+      this.posts = res.body;
+      console.log("getPost result: " + JSON.stringify(res));
+    });
+  }
+
+  createPost() {
     this.postService.createPost().subscribe((newPost) => {
       this.posts.push(newPost);
     });

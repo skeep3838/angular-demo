@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Task } from '../module/task';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,11 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  getTasks() {
+  getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.tasksUrl);
   }
 
-  createTask() {
+  createTask(): Observable<Task> {
     const task: Task = {
       TaskSn: '1',
       TaskName: '新增任務',
