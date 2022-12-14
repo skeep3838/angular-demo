@@ -1,10 +1,11 @@
+import { IOrderService } from './i-order-service';
 import { OrderDetail } from './../module/order-detail';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrderDiscontService {
+export class OrderDiscontService implements IOrderService{
 
   message = '九折價格';
   details: OrderDetail[] = [];

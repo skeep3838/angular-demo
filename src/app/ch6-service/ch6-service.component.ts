@@ -2,6 +2,7 @@ import { OrderDetail } from './../module/order-detail';
 import { FontSizeService } from './../service/font-size.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { OrderService } from '../service/order.service';
+import { IOrderService, ORDER_SERVICE } from '../service/i-order-service';
 
 @Component({
   selector: 'app-ch6-service',
@@ -22,18 +23,22 @@ export class Ch6ServiceComponent implements OnInit {
     // 6.3.2 字串類型令牌
     @Inject('LoadingPath') public loadingPath: string,
     public fontSizeService: FontSizeService,
-    public orderService: OrderService
+    // public orderService: OrderService
+
+    // 6.3.3 InjectionToken 令牌
+    @Inject(ORDER_SERVICE)
+    public orderService: IOrderService
   ) { }
 
   ngOnInit(): void {
-    this.orderService.details= [
-    new OrderDetail({PurchaseCount: 20, UnitPrice: 30 }),
-    new OrderDetail({PurchaseCount: 5, UnitPrice: 10 })
+    this.orderService.details = [
+      new OrderDetail({ PurchaseCount: 20, UnitPrice: 30 }),
+      new OrderDetail({ PurchaseCount: 5, UnitPrice: 10 })
     ];
     this.total = this.orderService.computeTotal();
   }
 
-  onSetFontSize(value: number): void{
+  onSetFontSize(value: number): void {
     this.fontSizeService.size += value;
   }
 

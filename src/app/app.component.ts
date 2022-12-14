@@ -1,3 +1,4 @@
+import { ORDER_SERVICE, IOrderService } from './service/i-order-service';
 import { Task } from './module/task';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, ViewChild, ElementRef, OnInit, Inject } from '@angular/core';

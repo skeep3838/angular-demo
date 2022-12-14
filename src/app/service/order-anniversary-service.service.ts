@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { OrderDetail } from '../module/order-detail';
+import { IOrderService } from './i-order-service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrderAnniversaryServiceService {
+export class OrderAnniversaryServiceService implements IOrderService {
 
   constructor() { }
 
