@@ -51,7 +51,7 @@ import { MainPageComponent } from './main-page/main-page.component';
   ],
   // 6.2.1 利用 useClass 抽象服務
   // 利用 useClass 直接抽換原本的訂單服務
-  // providers: [{provide: OrderService, useClass: OrderDiscontService}],
+  providers: [{ provide: OrderService, useClass: OrderDiscontService }, {provide: 'LoadingPath', useValue:'assets/loading.gif'}],
 
   // 6.2.2 利用 useExisting 抽象服務
   // 利用useExisting 不會建立新的實體，會去使用已經存在的實體，若是不存在任何實體則會拋出例外
@@ -62,14 +62,14 @@ import { MainPageComponent } from './main-page/main-page.component';
   // providers: [{provide: OrderService, useValue: {computeTotal: () => 100}}],
 
   // 6.2.4 利用 useFactory 抽象服務
-  providers:
-    [{
-      provide: OrderService,
-      useFactory: () => {
-        return (new Date()).getMonth() === 11
-          ? new OrderAnniversaryServiceService() : new OrderService();
-      }
-    }],
+  // providers:
+  //   [{
+  //     provide: OrderService,
+  //     useFactory: () => {
+  //       return (new Date()).getMonth() === 11
+  //         ? new OrderAnniversaryServiceService() : new OrderService();
+  //     }
+  //   }],
   bootstrap: [AppComponent],
   exports: []
 })
