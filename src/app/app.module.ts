@@ -22,9 +22,10 @@ import { OrderByPipe } from './ch5-pipe/order-by.pipe';
 import { Ch6ServiceComponent } from './ch6-service/ch6-service.component';
 import { OtherComponent } from './other/other.component';
 import { TaskComponent } from './task/task.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MainPageComponent } from './main-page/main-page.component';
 import { TimerComponent } from './task/timer/timer.component';
+import { ErrorHandlerInterceptor } from './task/error-handler.interceptor';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,15 @@ import { TimerComponent } from './task/timer/timer.component';
   //   }],
 
   // 6.3.3 InjectionToken 令牌
-  providers: [{ provide: ORDER_SERVICE, useClass: OrderService }, { provide: 'LoadingPath', useValue: 'assets/loading.gif' }],
+  providers: [
+    { provide: ORDER_SERVICE, useClass: OrderService }, 
+    { provide: 'LoadingPath', useValue: 'assets/loading.gif' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorHandlerInterceptor,
+      multi: true,
+    }
+  ],
 
 
   bootstrap: [AppComponent],
