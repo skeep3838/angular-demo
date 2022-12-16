@@ -1,8 +1,6 @@
 import { PostModule } from './../module/post-module';
 import { PostService } from './../service/post.service';
-import { TaskService } from './../service/task.service';
 import { Component, OnInit } from '@angular/core';
-import { Task } from '../module/task';
 import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -11,10 +9,11 @@ import { Observable } from 'rxjs';
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
-export class TaskComponent implements OnInit {
+export class TaskComponent implements OnInit{
 
   posts: PostModule[] = [];
   post$!: Observable<PostModule[]>;
+  display = false;
 
   constructor(
     private postService: PostService
@@ -42,7 +41,7 @@ export class TaskComponent implements OnInit {
 
   createPost() {
     this.postService.createPost().subscribe((newPost) => {
-      this.posts.push(newPost);
+      this.post$ = this.postService.getPosts();
     });
   }
 

@@ -1,3 +1,9 @@
+<button [disabled]="display" (click)="display = true">開啟計時</button>
+<button [disabled]="!display" (click)="display = false">關閉計時</button>
+<br>
+<app-timer *ngIf="display"></app-timer>
+
+<hr>
 <ng-container *ngIf="(post$ | async) as postsAsy and postsAsy?.length > 0; else empty">
     <!-- <table border="1">
         <tr>

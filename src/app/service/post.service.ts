@@ -1,5 +1,5 @@
 import { PostModule } from './../module/post-module';
-import { HttpClient, HttpEvent, HttpEventType, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 
@@ -9,6 +9,11 @@ import { Observable, tap } from 'rxjs';
 export class PostService {
 
   private postUrl: string = 'http://localhost:3000/posts';
+  options = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -28,6 +33,6 @@ export class PostService {
       author: "auther add",
       title: "title add"
     }
-    return this.http.post<PostModule>(this.postUrl, postModule);
+    return this.http.post<PostModule>(this.postUrl, postModule, this.options);
   }
 }
